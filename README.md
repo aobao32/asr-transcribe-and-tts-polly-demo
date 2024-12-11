@@ -1,6 +1,8 @@
 # asr-transcribe-and-tts-polly-demo
 
-本Demo演示ASR功能 (Amazon Transcribe) 本机mic输入，以及TTS（Amazon Polly）语音合成播放。
+ASR的全称是Automated Speech Recognition，通俗的说就是语音输入识别。TTS的全称是Text to Speech，也就是从文本到语音的人工合成。在AWS这两个场景分别对应的是Amazon Transcribe服务，以及Amazon Polly服务。
+
+本文的Demo演示ASR功能本机mic输入，以及TTS通过本机扬声器播放合成的语音。
 
 ## 一、Amazon Transcribe 使用
 
@@ -88,7 +90,7 @@ Amazon Polly现在提供四种语音引擎，分别是：
 - 长篇神经网络
 - 生成式
 
-传统引擎和神经网络引擎是旧式的发生引擎，长篇引擎适合生成有声书。最新的引擎是生成式引擎，截止2024年12月，尽在AWS美东1、美西2、法兰克福等部分region可用。具体请参考Polly官方文档。
+传统引擎和神经网络引擎是旧式的发声引擎，长篇引擎适合生成有声书。最新的引擎是生成式引擎，截止2024年12月，尽在AWS美东1、美西2、法兰克福等部分region可用。具体请参考Polly官方文档。
 
 ### 2、Python sample code
 

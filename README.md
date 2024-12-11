@@ -114,6 +114,14 @@ Transcribe streaming python sample code:
 
 [https://github.com/awslabs/amazon-transcribe-streaming-sdk/blob/develop/examples/simple_mic.py]()
 
+Transcribe streaming 官方文档
+
+[https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html]()
+
+Transcribe Java sdk sample from aws-doc
+
+[https://github.com/awsdocs/aws-doc-sdk-examples/blob/b320aeae1a3e650bffc23f9584a26a7ca177cbb2/javav2/example_code/transcribe/src/main/java/com/amazonaws/transcribestreaming/TranscribeStreamingDemoApp.java]()
+
 Amazon Corretto (JDK) 下载：
 
 [https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html]()

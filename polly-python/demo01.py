@@ -25,7 +25,7 @@ def text_to_speech(text):
         Text=text,
         SampleRate='16000',  # 采样率
         #Engine='neural'  # 使用神经网络引擎
-        Engine='generative'  # 使用神经网络引擎
+        Engine='generative'  # 使用生成式引擎（注意仅部分Region支持）
     )
 
     # 读取音频流

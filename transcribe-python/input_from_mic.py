@@ -11,13 +11,11 @@ https://github.com/awslabs/amazon-transcribe-streaming-sdk/blob/develop/examples
 import asyncio
 import pyaudio
 import sounddevice
-
 from amazon_transcribe.client import TranscribeStreamingClient
 from amazon_transcribe.handlers import TranscriptResultStreamHandler
 from amazon_transcribe.model import TranscriptEvent
 
 pa = pyaudio.PyAudio()
-
 default_frames = 1024
 input_device = pa.get_default_input_device_info()
 
@@ -29,7 +27,6 @@ class MyEventHandler(TranscriptResultStreamHandler):
         for result in results:
             for alt in result.alternatives:
                 print(alt.transcript)
-
 
 async def mic_stream():
     # This function wraps the raw input stream from the microphone forwarding
@@ -58,7 +55,6 @@ async def mic_stream():
             indata, status = await input_queue.get()
             yield indata, status
 
-
 async def write_chunks(stream):
     # This connects the raw audio chunks generator coming from the microphone
     # and passes them along to the transcription stream.
@@ -66,14 +62,13 @@ async def write_chunks(stream):
         await stream.input_stream.send_audio_event(audio_chunk=chunk)
     await stream.input_stream.end_stream()
 
-
 async def basic_transcribe():
     # Setup up our client with our chosen AWS region
     client = TranscribeStreamingClient(region="us-west-2")
 
     # Start transcription to generate our async stream
     stream = await client.start_stream_transcription(
-        language_code="en-US",
+        language_code="zh-CN",
         enable_partial_results_stabilization = True,
         partial_results_stability="low",
         media_sample_rate_hz=16000,
@@ -83,7 +78,6 @@ async def basic_transcribe():
     # Instantiate our handler and start processing events
     handler = MyEventHandler(stream.output_stream)
     await asyncio.gather(write_chunks(stream), handler.handle_events())
-
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(basic_transcribe())
